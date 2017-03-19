@@ -1,0 +1,17 @@
+// 既定の設定を上書きするには、このファイル内に設定を挿入します
+{
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Ricty Diminished Discord",
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
+    "editor.insertSpaces": false,
+    "editor.wordWrap": "on",
+    // 端末のフォント サイズをピクセル単位で制御します。
+    "terminal.integrated.fontSize": 16,
+    "workbench.iconTheme": "file-icons",
+    "files.associations": {
+        "*.ejs": "html"
+    },
+    // 既定の HTML フォーマッタを有効/無効にします (再起動が必要です)
+    "html.format.enable": false
+}

@@ -1,0 +1,87 @@
+{
+	"name": "windows-explorer-context-menu",
+	"displayName": "Windows Explorer Context Menu",
+	"description": "Opens Windows Explorer Context Menu on files and folders.",
+	"version": "1.0.2",
+	"publisher": "electrotype",
+	"icon": "images/windows.png",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Other"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/electrotype/vscode-windows-explorer-context-menu"
+	},
+	"homepage": "https://github.com/electrotype/vscode-windows-explorer-context-menu",
+	"keywords": [
+		"windows",
+		"menu",
+		"context menu",
+		"shell",
+		"TortoiseGit"
+	],
+	"activationEvents": [
+		"onCommand:extension.windowsExplorerContextMenuCurrent",
+		"onCommand:extension.windowsExplorerContextMenu",
+		"onCommand:extension.windowsExplorerContextMenuRoot"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.windowsExplorerContextMenuCurrent",
+				"title": "☰ Context Menu"
+			},
+			{
+				"command": "extension.windowsExplorerContextMenu",
+				"title": "☰ Context Menu - Selected"
+			},
+			{
+				"command": "extension.windowsExplorerContextMenuRoot",
+				"title": "☰ Context Menu - Root"
+			}
+		],
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "extension.windowsExplorerContextMenu",
+					"group": "navigation@1"
+				},
+				{
+					"command": "extension.windowsExplorerContextMenuRoot",
+					"group": "navigation@2"
+				}
+			],
+			"editor/context": [
+				{
+					"command": "extension.windowsExplorerContextMenuCurrent",
+					"group": "navigation@1"
+				}
+			]
+		},
+		"configuration": {
+			"type": "object",
+			"title": "Windows Explorer Context Menu configuration",
+			"properties": {
+				"windowsExplorerContextMenu.executable": {
+					"type": [
+						"string"
+					],
+					"default": "AutohotkeyContextMenu.exe",
+					"description": "The executable to use to open the context menu. Can be 'AutohotkeyContextMenu.exe', 'WinContextMenu_x86.exe' or 'Context.exe'."
+				}
+			}
+		}
+	},
+	"devDependencies": {
+		"vscode": "1.3.x"
+	},
+	"__metadata": {
+		"id": "2ff7b762-b42f-4ec9-a7d7-98eb099ca0c7",
+		"publisherId": "0fcdca4b-499c-4b2e-8a30-dbd77c4213fc",
+		"publisherDisplayName": "electrotype"
+	}
+}

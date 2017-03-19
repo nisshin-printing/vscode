@@ -1,0 +1,56 @@
+{
+	"name": "shortcuts",
+	"displayName": "Shortcuts",
+	"description": "Add handy shortcuts to your status bar",
+	"version": "0.0.1",
+	"publisher": "gizak",
+	"engines": {
+		"vscode": "^1.3.1"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gizak/vscode-shortcuts.git"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"icon": "images/icon.png",
+	"main": "./out/src/extension",
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Shortcuts configuration",
+			"properties": {
+				"shortcuts.buttons": {
+					"type": "array",
+					"description": "Setup shortcut buttons. Format: ICON,COMMAND,TOOLTIP",
+					"default": [
+						"file-binary , workbench.action.tasks.build , Run build task",
+						"beaker , workbench.action.tasks.test , Run test task",
+						"terminal , workbench.action.terminal.toggleTerminal , Toggle terminal panel",
+						"telescope , workbench.action.showCommands , Show command palette",
+						"bug, workbench.action.debug.start, Launch debug"
+					]
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -p .",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"typescript": "^1.8.10",
+		"vscode": "^0.11.14"
+	},
+	"__metadata": {
+		"id": "ee7402cb-a292-4894-84b1-a024ca8d8bb5",
+		"publisherId": "e82dc9aa-fd93-4781-9965-ca4e42db92ce",
+		"publisherDisplayName": "gizak"
+	}
+}

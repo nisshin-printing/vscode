@@ -1,0 +1,80 @@
+{
+	"name": "vscode-es-beautifier",
+	"displayName": "es-beautifier",
+	"publisher": "dai-shi",
+	"description": "vscode plugin for es-beautifier",
+	"icon": "logo1.svg",
+	"version": "0.2.3",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dai-shi/es-beautifier.git"
+	},
+	"dependencies": {
+		"es-beautifier": "^0.6.5"
+	},
+	"devDependencies": {
+		"vscode": "^1.0.3"
+	},
+	"activationEvents": [
+		"onLanguage:es-beautifier"
+	],
+	"main": "./index.js",
+	"contributes": {
+		"languages": [
+			{
+				"id": "es-beautifier",
+				"aliases": [
+					"JavaScript (es-beautifier)"
+				],
+				"extensions": [
+					"js",
+					"jsx"
+				],
+				"configuration": "./vendor/language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "es-beautifier",
+				"scopeName": "source.js",
+				"path": "./vendor/JavaScript.tmLanguage.json"
+			},
+			{
+				"scopeName": "source.js.regexp",
+				"path": "./vendor/Regular Expressions (JavaScript).tmLanguage"
+			}
+		],
+		"snippets": [
+			{
+				"language": "es-beautifier",
+				"path": "./vendor/javascriptreact.json"
+			}
+		]
+	},
+	"categories": [
+		"Formatters"
+	],
+	"keywords": [
+		"javascript",
+		"emcascript",
+		"eslint",
+		"beautifier",
+		"beautify"
+	],
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"eslintConfig": {
+		"settings": {
+			"import/core-modules": [
+				"vscode"
+			]
+		}
+	},
+	"license": "MIT",
+	"__metadata": {
+		"id": "6d7db2e6-ea3b-4ea1-a2f8-f25f436a1dc3",
+		"publisherId": "69fb4ac6-afc7-448d-98b6-07d176adaee7",
+		"publisherDisplayName": "dai-shi"
+	}
+}
